@@ -4,13 +4,13 @@ import Footer from "./Footer";
 export default function Resume() {
   return (
     <div>
-      <div class="card">
-        <div class="card-content">
-          <p class="title">Resume</p>
-          <p class="subtitle">Jeff Atwood</p>
+      <div className="card">
+        <div className="card-content">
+          <p className="title">Resume</p>
+          <p className="subtitle">Jeff Atwood</p>
         </div>
-        <footer class="card-footer">
-          <p class="card-footer-item">
+        <footer className="card-footer">
+          <p className="card-footer-item">
             <span>
               download{" "}
               <a href="https://twitter.com/codinghorror/status/506010907021828096">
@@ -18,7 +18,7 @@ export default function Resume() {
               </a>
             </span>
           </p>
-          <p class="card-footer-item">
+          <p className="card-footer-item">
             <span>
               view<a href="#">Facebook</a>
             </span>
