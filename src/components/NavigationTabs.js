@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "./assets/chris-gibson-high-resolution-logo-color-on-transparent-background.png";
 
 // Here we are using object destructuring assignment to pluck off our variables from the props object
 // We assign them to their own variable names
@@ -8,11 +9,7 @@ function NavigationTabs({ currentPage, handlePageChange }) {
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="https://bulma.io">
-          <img
-            src="https://bulma.io/images/bulma-logo.png"
-            width="112"
-            height="28"
-          />
+          <img src={logo} width="112" height="28" />
         </a>
 
         <a
