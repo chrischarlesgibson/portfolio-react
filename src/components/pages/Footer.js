@@ -1,19 +1,33 @@
 import React from "react";
 import "../styles/footer.css";
-// import { fab } from "@fortawesome/free-brands-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faMedium,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="content has-text-centered">
-        <p>
-          Built by Chris Gibson. The source code is licensed
-          <FontAwesomeIcon icon={faCoffee} />
-          <FontAwesomeIcon icon={faHouse} />
-        </p>
+      <div className="column is-full">
+        <div
+          className="content has-text-centered is-flex"
+          id="social-media-icons"
+        >
+          <a href="https://github.com/chrischarlesgibson?tab=repositories">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+
+          <a href="https://www.linkedin.com/in/chris-gibson-415909250/">
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+
+          <a href="https://medium.com/@chrischarlesgibson">
+            <FontAwesomeIcon icon={faMedium} />
+          </a>
+        </div>
       </div>
     </footer>
   );
