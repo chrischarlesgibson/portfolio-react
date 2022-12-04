@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
-
+/* eslint-disable */
 export default function Resume() {
   return (
     <div>

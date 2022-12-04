@@ -2,6 +2,7 @@ import React from "react";
 
 // Here we are using object destructuring assignment to pluck off our variables from the props object
 // We assign them to their own variable names
+/* eslint-disable */
 function NavigationTabs({ currentPage, handlePageChange }) {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -32,7 +33,7 @@ function NavigationTabs({ currentPage, handlePageChange }) {
         <div className="navbar-start">
           <a
             href="#aboutMe"
-            onClick={() => handlePageChange("AboutME")}
+            onClick={() => handlePageChange("AboutMe")}
             // Check to see if the currentPage is `About`, and if so we use the active link className from bootstrap. Otherwise, we set it to a normal nav-link
             className={
               currentPage !== "AboutMe" ? "navbar-item" : "navbar-item is-info"
