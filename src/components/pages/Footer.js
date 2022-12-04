@@ -1,19 +1,18 @@
 import React from "react";
+import "../styles/footer.css";
+// import { fab } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="content has-text-centered">
         <p>
-          <strong>Bulma</strong> by{" "}
-          <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
-          licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
-          website content is licensed{" "}
-          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-            CC BY NC SA 4.0
-          </a>
-          .
+          Built by Chris Gibson. The source code is licensed
+          <FontAwesomeIcon icon={faCoffee} />
+          <FontAwesomeIcon icon={faHouse} />
         </p>
       </div>
     </footer>
