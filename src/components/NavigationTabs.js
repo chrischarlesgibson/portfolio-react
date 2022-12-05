@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./assets/chris-gibson-high-resolution-logo-color-on-transparent-background.png";
-
+import "../components/styles/navbar.css";
 // Here we are using object destructuring assignment to pluck off our variables from the props object
 // We assign them to their own variable names
 /* eslint-disable */

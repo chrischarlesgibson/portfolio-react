@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
+import "../styles/portfolio.css";
 /* eslint-disable */
 export default function Portfolio() {
   return (

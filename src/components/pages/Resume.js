@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
+import "../styles/resume.css";
 /* eslint-disable */
 export default function Resume() {
   return (
@@ -7,20 +8,19 @@ export default function Resume() {
       <div className="card">
         <div className="card-content">
           <p className="title">Resume</p>
-          <p className="subtitle">Jeff Atwood</p>
         </div>
         <footer className="card-footer">
           <p className="card-footer-item">
             <span>
               download{" "}
               <a href="https://twitter.com/codinghorror/status/506010907021828096">
-                Twitter
+                resume
               </a>
             </span>
           </p>
           <p className="card-footer-item">
             <span>
-              view<a href="#">Facebook</a>
+              expand <a href="#">resume</a>
             </span>
           </p>
         </footer>

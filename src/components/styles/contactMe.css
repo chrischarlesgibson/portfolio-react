@@ -1,0 +1,12 @@
+#contactMe-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #020122;
+  font-size: 3rem;
+}
+#contactMe-container {
+  min-height: 100vh;
+  background-color: #f2f3ae;
+}
