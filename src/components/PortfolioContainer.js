@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavigationTabs from "./NavigationTabs";
 import StartPage from "./pages/StartPage";
 import AboutMe from "./pages/AboutMe";
-import Portfolio from "./pages/projectCard";
+import Portfolio from "./pages/portfolio.js";
 import ContactMe from "./pages/ContactMe";
 import Resume from "./pages/Resume";
 
