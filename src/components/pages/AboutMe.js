@@ -5,7 +5,7 @@ import "../styles/aboutMe.css";
 
 export default function AboutMe() {
   return (
-    <div>
+    <div id="aboutMe-container ">
       <div className="columns">
         <div className="column is-full content has-text-centered ">
           <h1>About Me</h1>

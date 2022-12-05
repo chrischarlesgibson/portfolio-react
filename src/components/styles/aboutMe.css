@@ -4,3 +4,9 @@
   height: 150px;
   border-radius: 50%;
 }
+
+#aboutMe-container {
+  min-height: 100vh;
+  background-color: #f2f3ae;
+  color: #020122;
+}

@@ -4,7 +4,7 @@ import "../styles/resume.css";
 /* eslint-disable */
 export default function Resume() {
   return (
-    <div>
+    <div id="resume-container">
       <div className="columns">
         <div className="column is-half content has-text-centered ">
           <div className="card">

@@ -4,7 +4,7 @@ import "../styles/portfolio.css";
 /* eslint-disable */
 export default function Portfolio() {
   return (
-    <div>
+    <div id="portfolio-wrapper">
       <div className="card">
         <div className="card-content">
           <p className="title">
