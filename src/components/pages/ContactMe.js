@@ -17,7 +17,8 @@ export default function ContactMe() {
   });
 
   const handleChange = (e) =>
-    setContactFormData({ ...contactFormData, [e.target.id]: e.target.value });
+    setContactFormData({ ...contactFormData, [e.target.name]: e.target.value });
+  console.log("state changed", contactFormData);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -51,6 +52,7 @@ export default function ContactMe() {
           <div className="field">
             <p className="control is-expanded has-icons-left">
               <input
+                name="name"
                 className="input "
                 type="text"
                 placeholder="Your Name"
@@ -68,6 +70,7 @@ export default function ContactMe() {
           <div className="field">
             <p className="control is-expanded has-icons-left has-icons-right">
               <input
+                name="email"
                 className="input "
                 type="email"
                 placeholder="Email"
@@ -96,6 +99,7 @@ export default function ContactMe() {
           <div className="field">
             <div className="control">
               <textarea
+                name="message"
                 className="textarea"
                 placeholder="Enter message..."
                 onChange={handleChange}
@@ -116,12 +120,7 @@ export default function ContactMe() {
         <div className="field-body">
           <div className="field">
             <div className="control">
-              <button
-                id="message-button"
-                className="button "
-                type="submit"
-                onClick={(e) => sendEmail(e)}
-              >
+              <button id="message-button" className="button " type="submit">
                 Send message
               </button>
             </div>
