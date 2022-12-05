@@ -1,5 +1,9 @@
 .footer {
   background-color: #edd382;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 0;
 }
 #social-media-icons {
   color: #020122;
