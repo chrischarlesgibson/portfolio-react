@@ -22,7 +22,7 @@ export default function ContactMe() {
     name: "",
     message: "",
   });
-  const { register, handleSubmit, errors } = useForm({
+  const { register, errors } = useForm({
     defaultValues: contactFormData,
   });
   const handleChange = (e) =>

@@ -1,35 +1,23 @@
 import React from "react";
-import Footer from "./Footer";
+import Footer from "./Footer.js";
 import "../styles/portfolio.css";
-/* eslint-disable */
+import { projects } from "../../components/data/projectsData.js";
+import ProjectCard from "./projectCard.js";
+
 export default function Portfolio() {
   return (
-    <div id="portfolio-wrapper">
-      <div className="card">
-        <div className="card-content">
-          <p className="title">
-            “There are two hard things in computer science: cache invalidation,
-            naming things, and off-by-one errors.”
-          </p>
-          <p className="subtitle">Jeff Atwood</p>
+    <section>
+      <h1>Projects</h1>
+      <div className="container is-fluid">
+        <div className="columns is-multiline">
+          <div className="column is-one-quarter">
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
         </div>
-        <footer className="card-footer">
-          <p className="card-footer-item">
-            <span>
-              View on{" "}
-              <a href="https://twitter.com/codinghorror/status/506010907021828096">
-                Twitter
-              </a>
-            </span>
-          </p>
-          <p className="card-footer-item">
-            <span>
-              Share on <a href="#">Facebook</a>
-            </span>
-          </p>
-        </footer>
       </div>
       <Footer />
-    </div>
+    </section>
   );
 }
