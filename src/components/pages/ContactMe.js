@@ -16,7 +16,8 @@ export default function ContactMe() {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    mode: "onChange",
+    // mode: "onChange",
+    mode: "onBlur",
   });
 
   const handleEmail = (data) => console.log(data);

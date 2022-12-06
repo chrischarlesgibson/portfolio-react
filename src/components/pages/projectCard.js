@@ -8,12 +8,11 @@ export default function ProjectCard(props) {
     <div className="card">
       <div className="card-image">
         <figure>
-          <img src={props.thumbnail} alt={props.project.title} />
+          <img src={props.project.thumbnail} alt={props.project.title} />
         </figure>
       </div>
       <div className="card-content">
         <h4 className="title">{props.project.title}</h4>
-        <p className="subtitle">{props.project.description}</p>
       </div>
       <footer className="card-footer">
         <p className="card-footer-item">
