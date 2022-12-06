@@ -8,9 +8,7 @@ function NavigationTabs({ currentPage, handlePageChange }) {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
-          <img src={logo} width="112" height="28" />
-        </a>
+        <img src={logo} width="112" height="28" />
 
         <a
           role="button"
