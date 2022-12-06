@@ -1,4 +1,3 @@
-import { useForm } from "react-hook-form";
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Footer from "./Footer";
@@ -6,36 +5,54 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faCheck } from "@fortawesome/free-solid-svg-icons";
 import "../styles/contactMe.css";
 import { init } from "@emailjs/browser";
+import { useForm } from "react-hook-form";
 init("REACT_APP_EMAILJS_USER_ID");
 
 export default function ContactMe() {
-  // const emailErrorMessage = document.querySelector("#invalid-email");
-  // const nameErrorMessage = document.querySelector("#invalid-name");
-  // const messageErrorMessage = document.querySelector("#invalid-message");
   const form = useRef();
-  // const emailErrorMessage = useRef();
-  // const nameErrorMessage = useRef();
-  // const messageErrorMessage = useRef();
 
   const [contactFormData, setContactFormData] = useState({
     email: "",
     name: "",
     message: "",
   });
-  const { register, errors } = useForm({
-    defaultValues: contactFormData,
-  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "onChange" });
+  const handleEmail = (data) => console.log(data);
+
+  const handleError = (errors) => console.error(errors);
+
+  const validations = {
+    name: {
+      required: "name required.",
+      minLength: {
+        value: 2,
+        message: "name should be at-least 2 characters.",
+      },
+    },
+    email: {
+      required: "Email is required.",
+      pattern: {
+        value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+        message: "Email is not valid.",
+      },
+    },
+    message: {
+      required: "message required.",
+      minLength: {
+        value: 5,
+        message: "message must be at least 5 characters long.",
+      },
+    },
+  };
+
   const handleChange = (e) =>
     setContactFormData({ ...contactFormData, [e.target.name]: e.target.value });
   console.log("state changed", contactFormData);
-
-  // if (contactFormData.name === "") {
-  //   nameErrorMessage.classList.remove("is-hidden");
-  // } else if (contactFormData.email === "") {
-  //   emailErrorMessage.classList.remove("is-hidden");
-  // } else if (contactFormData.message === "") {
-  //   messageErrorMessage.classList.remove("is-hidden");
-  // }
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -60,7 +77,11 @@ export default function ContactMe() {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} id="contact-form-container">
+    <form
+      ref={form}
+      onSubmit={handleSubmit(handleEmail, handleError, sendEmail)}
+      id="contact-form-container"
+    >
       <div className="field is-horizontal">
         <div className="field-label is-normal">
           <label className="label">From</label>
@@ -75,17 +96,10 @@ export default function ContactMe() {
                 placeholder="Your Name"
                 onChange={handleChange}
                 value={contactFormData.name}
-                {...register("name", {
-                  required: "name required.",
-                  minLength: {
-                    value: 2,
-                    message: "name should be at-least 2 characters.",
-                  },
-                })}
+                {...register("name", validations.name)}
               />
-              {errors.name && <p className="errorMsg">{errors.name.message}</p>}
-              <span id="invalid-name" className="help is-danger is-hidden">
-                This field is required
+              <span className="help is-danger">
+                {errors?.name && errors.name.message}
               </span>
               <span className="icon is-small is-left">
                 <FontAwesomeIcon icon={faUser} />
@@ -101,20 +115,10 @@ export default function ContactMe() {
                 placeholder="Email"
                 onChange={handleChange}
                 value={contactFormData.email}
-                {...register("email", {
-                  required: "Email is required.",
-                  pattern: {
-                    value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
-                    message: "Email is not valid.",
-                  },
-                })}
+                {...register("email", validations.email)}
               />
-              {errors.email && (
-                <p className="errorMsg">{errors.email.message}</p>
-              )}
-
-              <span id="invalid-email" className="help is-danger is-hidden">
-                Invalid email address
+              <span className="help is-danger">
+                {errors?.email && errors.email.message}
               </span>
               <span className="icon is-small is-left">
                 <FontAwesomeIcon icon={faEnvelope} />
@@ -140,21 +144,10 @@ export default function ContactMe() {
                 placeholder="Enter message..."
                 onChange={handleChange}
                 value={contactFormData.message}
-                {...register("message", {
-                  required: "message required.",
-                  minLength: {
-                    value: 5,
-                    message: "message must be at least 5 characters long.",
-                  },
-                })}
-              >
-                {errors.message && (
-                  <p className="errorMsg">{errors.message.message}</p>
-                )}
-              </textarea>
-
-              <span id="invalid-message" className="help is-danger is-hidden">
-                This field is required
+                {...register("message", validations.message)}
+              ></textarea>
+              <span className="help is-danger">
+                {errors?.message && errors.message.message}
               </span>
             </div>
           </div>
