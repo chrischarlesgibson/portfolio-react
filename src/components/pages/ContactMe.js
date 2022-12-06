@@ -1,27 +1,24 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Footer from "./Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faCheck } from "@fortawesome/free-solid-svg-icons";
 import "../styles/contactMe.css";
-import { init } from "@emailjs/browser";
+// import { init } from "@emailjs/browser";
 import { useForm } from "react-hook-form";
-init("REACT_APP_EMAILJS_USER_ID");
+// init("REACT_APP_EMAILJS_USER_ID");
 
 export default function ContactMe() {
   const form = useRef();
-
-  const [contactFormData, setContactFormData] = useState({
-    email: "",
-    name: "",
-    message: "",
-  });
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ mode: "onChange" });
+  } = useForm({
+    mode: "onChange",
+  });
+
   const handleEmail = (data) => console.log(data);
 
   const handleError = (errors) => console.error(errors);
@@ -50,10 +47,6 @@ export default function ContactMe() {
     },
   };
 
-  const handleChange = (e) =>
-    setContactFormData({ ...contactFormData, [e.target.name]: e.target.value });
-  console.log("state changed", contactFormData);
-
   const sendEmail = (e) => {
     e.preventDefault();
     // if (name && emailAddress && emailMessage) {
@@ -67,7 +60,6 @@ export default function ContactMe() {
       )
       .then(
         (result) => {
-          setContactFormData({ email: "", name: "", message: "" });
           console.log(result.text);
         },
         (error) => {
@@ -79,7 +71,7 @@ export default function ContactMe() {
   return (
     <form
       ref={form}
-      onSubmit={handleSubmit(handleEmail, handleError, sendEmail)}
+      onSubmit={handleSubmit(handleEmail, handleError)}
       id="contact-form-container"
     >
       <div className="field is-horizontal">
@@ -94,8 +86,6 @@ export default function ContactMe() {
                 className="input "
                 type="text"
                 placeholder="Your Name"
-                onChange={handleChange}
-                value={contactFormData.name}
                 {...register("name", validations.name)}
               />
               <span className="help is-danger">
@@ -113,8 +103,6 @@ export default function ContactMe() {
                 className="input "
                 type="email"
                 placeholder="Email"
-                onChange={handleChange}
-                value={contactFormData.email}
                 {...register("email", validations.email)}
               />
               <span className="help is-danger">
@@ -142,8 +130,6 @@ export default function ContactMe() {
                 name="message"
                 className="textarea"
                 placeholder="Enter message..."
-                onChange={handleChange}
-                value={contactFormData.message}
                 {...register("message", validations.message)}
               ></textarea>
               <span className="help is-danger">
@@ -161,7 +147,12 @@ export default function ContactMe() {
         <div className="field-body">
           <div className="field">
             <div className="control">
-              <button id="message-button" className="button " type="submit">
+              <button
+                onClick={sendEmail}
+                id="message-button"
+                className="button "
+                type="submit"
+              >
                 Send message
               </button>
             </div>
