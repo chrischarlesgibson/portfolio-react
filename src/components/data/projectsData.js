@@ -8,6 +8,14 @@ import loveisblurPic from "../assets/loveisblurPic.png";
 export const projects = [
   {
     id: 1,
+    title: "Love is blur",
+    description: "a dating app who value values",
+    thumbnail: loveisblurPic,
+    repo: "https://github.com/DraconMarius/love-is-blurr",
+    appUrl: "https://love-is-blur.herokuapp.com/",
+  },
+  {
+    id: 2,
     title: "Purple Waive",
     description:
       "Purple wAIve uses DALLE2's artifical intellingence system to generate pictures based on user input",
@@ -16,7 +24,7 @@ export const projects = [
     appUrl: "https://purple-waive.herokuapp.com/",
   },
   {
-    id: 2,
+    id: 3,
     title: "LivHealthy",
     description:
       "This is an app for guidance on living healthy(or, LivHealthy). Here is a place for any individual to visit - searching for detailed recipes and exercises to fit their lifestyle needs and capacity while guided by inspirational, motivating quotes.",
@@ -25,7 +33,7 @@ export const projects = [
     appUrl: "https://thedomconrad.github.io/LivHealthy/",
   },
   {
-    id: 3,
+    id: 4,
     title: "NoteMaker3000",
     description:
       "NoteMaker3000 is an application that uses node.js and express.js to allow users to enter notes, save them and delete them. it's the perfect app for any student or anyone who wants to keep track of important info. ",
@@ -34,7 +42,7 @@ export const projects = [
     appUrl: "https://the-notemaker-3000.herokuapp.com/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Blogspot",
     description:
       "Blogspot is a webpage built for tech people who want to read and write all things tech related. It's a grass-roots blog community for tech people by tech people. ",
@@ -43,20 +51,12 @@ export const projects = [
     appUrl: "https://warm-coast-31406.herokuapp.com/",
   },
   {
-    id: 5,
+    id: 6,
     title: "WeatherCast",
     description:
       "WeatherCast is an application that presents a current day forecast as well as a five day future forecast for each city the user searchs for",
     thumbnail: weatherCastPic,
     repo: "https://github.com/chrischarlesgibson/Weather-Dashboard",
     appUrl: "https://chrischarlesgibson.github.io/Weather-Dashboard/",
-  },
-  {
-    id: 6,
-    title: "Love is blur",
-    description: "a dating app who value values",
-    thumbnail: loveisblurPic,
-    repo: "https://github.com/DraconMarius/love-is-blurr",
-    appUrl: "https://love-is-blur.herokuapp.com/",
   },
 ];
