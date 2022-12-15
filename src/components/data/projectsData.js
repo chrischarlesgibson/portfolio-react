@@ -3,6 +3,7 @@ import livHealthyPic from "../assets/LivHealthy.png";
 import noteTakerPic from "../assets/noteTaker3000.png";
 import purpleWaivePic from "../assets/purpleWaive.png";
 import weatherCastPic from "../assets/weathercast.png";
+import loveisblurPic from "../assets/loveisblurPic.png";
 
 export const projects = [
   {
@@ -52,10 +53,10 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Project placeholder",
-    description: "Project placeholder",
-    thumbnail: weatherCastPic,
-    repo: "https://github.com/chrischarlesgibson/Weather-Dashboard",
-    appUrl: "https://chrischarlesgibson.github.io/Weather-Dashboard/",
+    title: "Love is blur",
+    description: "a dating app who value values",
+    thumbnail: loveisblurPic,
+    repo: "https://github.com/DraconMarius/love-is-blurr",
+    appUrl: "https://love-is-blur.herokuapp.com/",
   },
 ];
